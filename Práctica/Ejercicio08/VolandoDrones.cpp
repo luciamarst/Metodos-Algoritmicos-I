@@ -4,6 +4,7 @@
 #include <iostream>
 #include <queue>
 #include <fstream>
+#include <list>
 using namespace std;
 
 bool resuelveCaso() {
@@ -28,48 +29,46 @@ bool resuelveCaso() {
         pq2.push(p);
     }
 
+    list<int> l1, l2;
     long int tiempo = 0;
     bool dronVolando = true;
-    int i = 1;
+    int i = 0;
     vector<long int> sol;
-    while(dronVolando){
 
-        if(!pq1.empty() && !pq2.empty()){
-            tiempo += min(pq1.top(), pq2.top());
+    while(!pq1.empty() && !pq2.empty()){
+
+        while(!pq1.empty() && !pq2.empty() && i < D){
+            tiempo += min(pq1.top(), pq2.top()); 
 
             if(pq1.top() < pq2.top()){
-               if(pq2.top() - pq1.top() > 0) pq2.push(pq2.top() - pq1.top());
+                l2.push_back(pq2.top() - pq1.top());
             }
             else if(pq1.top() > pq2.top()){
-               if(pq1.top() - pq2.top() > 0) pq1.push(pq1.top() - pq2.top());
+                l1.push_back(pq1.top() - pq2.top());
             }
 
             pq1.pop();
             pq2.pop();
 
-            if(i == D){
-                sol.push_back(tiempo);
-                i = 0;
-                tiempo = 0;
-            }
-        }
-        else if(pq1.empty() || pq2.empty()){
-            dronVolando = false;
-           if(tiempo > 0) sol.push_back(tiempo);
-            
+            i++;
         }
 
-        i++;
+        for (int val : l1) {
+            pq1.push(val);
+        }
+        l1.clear();
+        for (int val : l2) {
+            pq2.push(val);
+        }
+        l2.clear();
+        
+
+        cout << tiempo << " ";
+        tiempo = 0;
+        i = 0;
     }
-    //Resolver problema
-    //Escribir resultado
-    if(sol.size() == 0){
-        std::cout << "0\n";
-        return true;
-    }
-    for(int i = 0;  i < sol.size(); i++){
-        std::cout << sol[i] << " ";
-    }
+
+  
     std::cout << "\n";
     
     return true;

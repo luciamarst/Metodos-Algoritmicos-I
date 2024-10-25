@@ -1,0 +1,71 @@
+9
+C quickSort 31
+C mergeSort 40
+C burbuja 17
+C quickSort 8
+TC
+C heapSort 19
+C burbuja 1
+E mergeSort 6
+TC
+5
+C Hulk 1000
+C Ironman 3000
+E Hulk 1000
+C Superman 3000
+TC
+5
+C HOLA 23
+C ADIOS 23
+C XD 27
+C MAX 23
+TC
+11
+C PABLO 22
+C ANA 10
+C PUTA 30
+C ZORRA 22
+TC
+E ZORRA 10
+TC
+C JUAN 33
+TC
+C ANA 20
+TC
+8
+C tema1 10
+C tema2 20
+C tema3 30
+C tema4 40
+E tema2 10
+TC
+C tema5 50
+TC
+7
+C A 5
+C B 10
+C C 15
+E A 5
+TC
+C D 20
+TC
+8
+C X 100
+C Y 200
+C Z 300
+E Y 100
+TC
+C W 400
+E Z 300
+TC
+10
+C tema1 50
+C tema2 60
+C tema3 70
+C tema4 80
+E tema1 50
+E tema2 60
+TC
+C tema5 90
+C tema6 100
+TC
